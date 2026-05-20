@@ -9,27 +9,32 @@
 }
 
 @layer base {
-  :root {
+:root {
     --background: 210 20% 98%;
     --glow-primary: 190 80% 40%;
     --glow-secondary: 270 50% 45%;
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(270 50% 85% / 0.4) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(190 80% 80% / 0.3) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(270 50% 80% / 0.2) 0px, transparent 50%),
-                     radial-gradient(at 80% 50%, hsl(190 80% 75% / 0.2) 0px, transparent 50%),
-                     radial-gradient(at 0% 100%, hsl(270 50% 85% / 0.3) 0px, transparent 50%);
+    
+    /* Modern Cotton Candy (Vibrant and Creative) */
+    --gradient-mesh: 
+      radial-gradient(at 40% 20%, hsl(270 75% 65% / 0.30) 0px, transparent 55%),
+      radial-gradient(at 80% 0%, hsl(190 85% 60% / 0.25) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(270 65% 65% / 0.18) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(190 85% 60% / 0.18) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(270 75% 65% / 0.22) 0px, transparent 55%);
   }
   
-  .dark {
-    --background: 222 100% 0%;
-    /* --background: 0 0% 0%; */
+.dark {
+    --background: 0 0% 0%;
     --glow-primary: 190 95% 55%;
     --glow-secondary: 270 60% 55%;
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(270 60% 15% / 0.5) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, hsl(190 95% 15% / 0.4) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsl(270 60% 10% / 0.3) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, hsl(190 95% 10% / 0.3) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsl(270 60% 15% / 0.4) 0px, transparent 50%);
+    
+    /* Brighter but very translucent colors for a subtle neon effect */
+    --gradient-mesh: 
+      radial-gradient(at 40% 20%, hsl(270 60% 50% / 0.15) 0px, transparent 60%),
+      radial-gradient(at 80% 0%, hsl(190 95% 45% / 0.12) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(270 60% 45% / 0.10) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(190 95% 45% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(270 60% 50% / 0.12) 0px, transparent 60%);
   }
 
   /* body {
@@ -40,5 +45,14 @@
 @layer utilities {
   .mesh-gradient {
     background: var(--gradient-mesh);
+    filter: blur(40px);
+    
+    /* By default (light theme) we don't use blend mode or we use multiply,
+    and in dark theme we use screen to make the brightness explode */
+    mix-blend-mode: normal;
+  }
+  
+  .dark .mesh-gradient {
+    mix-blend-mode: screen;
   }
 }
