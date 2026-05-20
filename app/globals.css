@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: (hsl(var(--background)));
+  --color-background: hsl(var(--background));
   --color-glow-primary: hsl(var(--glow-primary));
   --color-glow-secondary: hsl(var(--glow-secondary));
 }
@@ -22,6 +22,7 @@
   
   .dark {
     --background: 222 100% 0%;
+    /* --background: 0 0% 0%; */
     --glow-primary: 190 95% 55%;
     --glow-secondary: 270 60% 55%;
     --gradient-mesh: radial-gradient(at 40% 20%, hsl(270 60% 15% / 0.5) 0px, transparent 50%),
