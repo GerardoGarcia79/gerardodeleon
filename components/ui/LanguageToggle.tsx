@@ -1,26 +1,33 @@
-"use client";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
-import { useEffect, useState } from "react";
-
-type Lang = "es" | "en";
+const localeLabels: Record<(typeof routing.locales)[number], string> = {
+  en: "inglés",
+  es: "español",
+};
 
 const LanguageToggle = () => {
-  const [lang, setLang] = useState<Lang>("es");
+  const locale = useLocale() as (typeof routing.locales)[number];
+  const pathname = usePathname();
+  const router = useRouter();
 
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
+  const nextLocale =
+    routing.locales.find((supported) => supported !== locale) ??
+    routing.defaultLocale;
 
-  const next = lang === "es" ? "en" : "es";
+  const handleClick = () => {
+    router.replace(pathname, { locale: nextLocale });
+  };
 
   return (
     <button
       type="button"
       className="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-border-subtle bg-surface/60 px-2 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-      aria-label={`Cambiar idioma a ${next === "es" ? "español" : "inglés"}`}
-      onClick={() => setLang(next)}
+      aria-label={`Cambiar idioma a ${localeLabels[nextLocale]}`}
+      onClick={handleClick}
     >
-      {lang.toUpperCase()}
+      {locale.toUpperCase()}
     </button>
   );
 };
