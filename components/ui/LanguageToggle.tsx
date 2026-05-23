@@ -17,7 +17,7 @@ const LanguageToggle = () => {
     routing.defaultLocale;
 
   const handleClick = () => {
-    router.replace(pathname, { locale: nextLocale });
+    router.replace(pathname, { locale: nextLocale, scroll: false });
   };
 
   return (

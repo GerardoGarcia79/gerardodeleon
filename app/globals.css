@@ -109,6 +109,13 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: hsl(210 20% 98%);
+    color-scheme: light;
+  }
+
+  html.dark {
+    background-color: hsl(0 0% 0%);
+    color-scheme: dark;
   }
 
   /* body {
