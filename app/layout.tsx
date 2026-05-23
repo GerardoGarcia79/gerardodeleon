@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@teispace/next-themes";
-import { getTheme, getThemeScript } from "@teispace/next-themes/server";
+import { getTheme } from "@teispace/next-themes/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { themeConfig } from "@/lib/theme";
 import "./globals.css";
@@ -23,25 +23,12 @@ export default async function RootLayout({
     (await getTheme({ themes: [...themeConfig.themes] })) ??
     themeConfig.defaultTheme;
 
-  const themeScript = getThemeScript({
-    attribute: themeConfig.attribute,
-    defaultTheme: themeConfig.defaultTheme,
-    themes: [...themeConfig.themes],
-    enableSystem: themeConfig.enableSystem,
-    initialTheme,
-    storageKey: themeConfig.storageKey,
-    enableColorScheme: true,
-  });
-
   return (
     <html
       suppressHydrationWarning
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <ThemeProvider
           attribute={themeConfig.attribute}
@@ -50,7 +37,6 @@ export default async function RootLayout({
           enableSystem={themeConfig.enableSystem}
           storageKey={themeConfig.storageKey}
           initialTheme={initialTheme}
-          noScript
           disableTransitionOnChange
           enableColorScheme
         >

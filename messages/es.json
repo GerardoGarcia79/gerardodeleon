@@ -1,4 +1,8 @@
 {
+  "NotFound": {
+    "description": "Esta página no existe.",
+    "home": "Ir al inicio"
+  },
   "Navbar": {
     "about me": "Sobre mí",
     "experience": "Experiencia",

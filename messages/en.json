@@ -1,4 +1,8 @@
 {
+  "NotFound": {
+    "description": "This page could not be found.",
+    "home": "Go home"
+  },
   "Navbar": {
     "about me": "About me",
     "experience": "Experience",
