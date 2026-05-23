@@ -10,15 +10,11 @@ export default function NotFound() {
       <h1 className="font-mono text-5xl font-bold text-foreground">404</h1>
       <p className="max-w-sm text-muted-foreground">
         {t("NotFound.description")}
-        {/* {locale === "es"
-          ? "Esta página no se pudo encontrar."
-          : "This page could not be found."} */}
       </p>
       <Link
         href={`/${routing.defaultLocale}`}
         className="text-sm font-medium text-primary underline-offset-4 hover:underline"
       >
-        {/* {locale === "es" ? "Ir a inicio" : "Go home"} */}
         {t("NotFound.home")}
       </Link>
     </main>
