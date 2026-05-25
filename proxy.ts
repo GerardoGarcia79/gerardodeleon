@@ -6,11 +6,15 @@ import { routing } from "./i18n/routing";
 const handleI18nRouting = createMiddleware(routing);
 
 export default function proxy(request: NextRequest) {
-  const [, firstSegment] = request.nextUrl.pathname.split("/");
+  const [, firstSegment, ...rest] = request.nextUrl.pathname.split("/");
 
-  // e.g. /fr → 404 at /fr (layout), not redirect to /en/fr
+  // /fr/about -> /en/about
   if (firstSegment && isInvalidLocaleSegment(firstSegment)) {
-    return NextResponse.next();
+    const pathname = rest.length ? `/${rest.join("/")}` : "";
+
+    return NextResponse.redirect(
+      new URL(`/${routing.defaultLocale}${pathname}`, request.url),
+    );
   }
 
   return handleI18nRouting(request);
