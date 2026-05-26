@@ -45,7 +45,7 @@ const Navbar = () => {
             className="flex items-center gap-2"
             aria-label="Inicio"
           >
-            <span className="font-mono text-lg font-bold tracking-tight text-gradient">
+            <span className="text-lg font-bold tracking-tight text-gradient">
               GDLG
             </span>
           </a>
