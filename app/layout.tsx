@@ -1,19 +1,8 @@
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
-// import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { themeConfig } from "@/lib/theme";
 import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const apfelGrotezk = localFont({
   src: [
@@ -45,9 +34,9 @@ export default async function RootLayout({
     <html
       suppressHydrationWarning
       data-scroll-behavior="smooth"
-      className={`${apfelGrotezk.variable}`}
+      className={apfelGrotezk.variable}
     >
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className="font-apfel antialiased bg-background text-foreground">
         <ThemeProvider
           attribute={themeConfig.attribute}
           defaultTheme={themeConfig.defaultTheme}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageToggle from "@/components/ui/LanguageToggle";
 import { NAV_CLOSE, NAV_CTA, NAV_KEYS, NAV_LABELS, NAV_MENU } from "@/lib/nav";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,10 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`site-header fixed inset-x-0 top-0 z-50 border-b ${scrolled ? "is-scrolled" : ""}`}
+        className={cn(
+          "site-header fixed inset-x-0 top-0 z-50 border-b",
+          scrolled ? "is-scrolled" : "",
+        )}
       >
         <nav
           aria-label="Principal"
@@ -86,7 +90,7 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`nav-overlay md:hidden ${open ? "nav-overlay--open" : ""}`}
+        className={cn("nav-overlay md:hidden", open ? "nav-overlay--open" : "")}
         aria-hidden={!open}
         inert={!open ? true : undefined}
       >
