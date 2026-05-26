@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
-import ParticleBackground from "@/components/ParticleBackground";
+import Hero from "@/components/sections/Hero";
+import Navbar from "@/components/layout/Navbar";
+import ParticleBackground from "@/components/sections/ParticleBackground";
 import { NAV_KEYS } from "@/lib/nav";
 
 const PortfolioPage = () => {

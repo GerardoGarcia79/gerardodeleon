@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { ThemeGuard } from "@/components/ThemeGuard";
+import { ThemeGuard } from "@/components/layout/ThemeGuard";
 import { routing } from "../../i18n/routing";
 
 export const metadata: Metadata = {
