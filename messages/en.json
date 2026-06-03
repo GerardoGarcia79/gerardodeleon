@@ -12,5 +12,11 @@
     "contact": "Contact",
     "home": "Home",
     "contact me": "Contact me"
+  },
+  "Hero": {
+    "roles": ["Frontend Developer", "Fullstack in progress"],
+    "summary": "I build fast, accessible, and scalable interfaces for startups and businesses.",
+    "main stack": "Main stack",
+    "complementary stack": "Complementary stack"
   }
 }
