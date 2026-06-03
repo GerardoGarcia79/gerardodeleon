@@ -182,6 +182,10 @@
     color: transparent;
   }
 
+  .progress-gradient {
+    background: var(--gradient-accent);
+  }
+
   .glass {
     background: hsl(var(--glass));
     backdrop-filter: blur(14px) saturate(140%);

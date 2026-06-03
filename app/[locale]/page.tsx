@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import Navbar from "@/components/layout/Navbar";
 import ParticleBackground from "@/components/sections/ParticleBackground";
 import { NAV_KEYS } from "@/lib/nav";
+import ProgressBar from "@/components/ui/ProgressBar";
 
 const PortfolioPage = () => {
   return (
@@ -9,6 +10,7 @@ const PortfolioPage = () => {
       <ParticleBackground />
       <Navbar />
       <main>
+        <ProgressBar />
         <Hero />
         {NAV_KEYS.map((id) => (
           <section
