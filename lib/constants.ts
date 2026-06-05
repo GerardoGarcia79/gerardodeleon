@@ -18,6 +18,5 @@ export const NAV_LABELS: Record<NavKey, string> = {
   contact: "Contacto",
 };
 
-export const NAV_CTA = "Contactar";
 export const NAV_MENU = "Abrir menú";
 export const NAV_CLOSE = "Cerrar menú";

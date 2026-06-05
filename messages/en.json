@@ -4,19 +4,19 @@
     "home": "Go home"
   },
   "Navbar": {
-    "about me": "About me",
+    "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
     "education": "Education",
     "stack": "Stack",
     "contact": "Contact",
     "home": "Home",
-    "contact me": "Contact me"
+    "contactMe": "Contact me"
   },
   "Hero": {
-    "roles": ["Frontend Developer", "Fullstack in progress"],
+    "roles": ["Frontend Developer", "Fullstack Developer in progress"],
     "summary": "I build fast, accessible, and scalable interfaces for startups and businesses.",
-    "main stack": "Main stack",
-    "complementary stack": "Complementary stack"
+    "mainStack": "Main stack",
+    "complementaryStack": "Complementary stack"
   }
 }

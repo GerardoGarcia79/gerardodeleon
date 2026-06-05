@@ -4,7 +4,7 @@ import TypewriterText from "@/components/ui/TypewriterText";
 const HERO_ROLES = ["Frontend Developer", "Fullstack en progreso"] as const;
 
 const Hero = () => {
-  const t = useTranslations();
+  const t = useTranslations("Hero");
 
   return (
     <section
@@ -20,13 +20,13 @@ const Hero = () => {
             Gerardo de León García
           </h1>
           <h3 className="text-lg text-muted-foreground my-4 text-balance tracking-normal">
-            {t("Hero.summary")}
+            {t("summary")}
           </h3>
           <p className="text-muted-foreground text-sm mb-2">
-            {t("Hero.main stack").toUpperCase()}
+            {t("mainStack").toUpperCase()}
           </p>
           <p className="text-muted-foreground text-sm mb-2">
-            {t("Hero.complementary stack").toUpperCase()}
+            {t("complementaryStack").toUpperCase()}
           </p>
         </div>
         <div className="flex flex-1">IDE</div>

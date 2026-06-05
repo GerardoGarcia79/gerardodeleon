@@ -3,10 +3,19 @@
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageToggle from "@/components/ui/LanguageToggle";
-import { NAV_CLOSE, NAV_CTA, NAV_KEYS, NAV_LABELS, NAV_MENU } from "@/lib/nav";
-import { cn } from "@/lib/utils";
+import {
+  NAV_CLOSE,
+  NAV_KEYS,
+  NAV_LABELS,
+  NAV_MENU,
+  NavKey,
+} from "@/lib/constants";
+import { cn, scrollToSection } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { PrimaryButton } from "../ui/Button";
 
 const Navbar = () => {
+  const t = useTranslations("Navbar");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -31,6 +40,11 @@ const Navbar = () => {
     window.addEventListener("resize", onResize, { passive: true });
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  const handleClick = (navKey: NavKey) => {
+    setOpen(false);
+    scrollToSection(navKey);
+  };
 
   return (
     <>
@@ -67,9 +81,9 @@ const Navbar = () => {
           <div className="hidden items-center gap-2 md:flex">
             <ThemeToggle />
             <LanguageToggle />
-            <a href="#contact" className="btn-primary">
-              {NAV_CTA}
-            </a>
+            <PrimaryButton handleClick={() => handleClick("contact")}>
+              {t("contactMe")}
+            </PrimaryButton>
           </div>
 
           <button
@@ -116,13 +130,9 @@ const Navbar = () => {
             <ThemeToggle />
             <LanguageToggle />
           </div>
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="btn-primary h-11 px-5"
-          >
-            {NAV_CTA}
-          </a>
+          <PrimaryButton handleClick={() => handleClick("contact")}>
+            {t("contactMe")}
+          </PrimaryButton>
         </div>
       </div>
     </>
