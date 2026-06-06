@@ -16,6 +16,7 @@
   "Hero": {
     "summary": "Creo interfaces rápidas, accesibles y escalables para startups y empresas.",
     "mainStack": "Stack principal",
-    "complementaryStack": "Stack complementario"
+    "complementaryStack": "Stack complementario",
+    "downloadResume": "Descargar CV"
   }
 }

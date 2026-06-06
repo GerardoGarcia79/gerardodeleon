@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 import TypewriterText from "@/components/ui/TypewriterText";
+import { PrimaryButton } from "../ui/Button";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 const HERO_ROLES = ["Frontend Developer", "Fullstack en progreso"] as const;
 
@@ -28,6 +30,11 @@ const Hero = () => {
           <p className="text-muted-foreground text-sm mb-2">
             {t("complementaryStack").toUpperCase()}
           </p>
+          <div>
+            <PrimaryButton icon={ArrowDownTrayIcon}>
+              {t("downloadResume")}
+            </PrimaryButton>
+          </div>
         </div>
         <div className="flex flex-1">IDE</div>
       </div>
